@@ -5,9 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Share implements Subject
+public class Share extends Subject
 {
-    private Observer observer;
     private int value;
     final String NAME;
 
@@ -16,12 +15,6 @@ public class Share implements Subject
     {
         observer=new ShareObserver(this);
     }
-    @Override
-    public void removeObserver()
-    {
-        observer=null;
-    }
-
     public Share(int value, String NAME)
     {
         this.value = value;

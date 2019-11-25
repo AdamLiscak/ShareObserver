@@ -1,7 +1,13 @@
 package share;
 
-public interface Subject
+public abstract class Subject
 {
-    void addObserver();
-    void removeObserver();
+    Observer observer;
+    public void addObserver()
+    {
+    }
+    public void removeObserver()
+    {
+        observer=null;
+    }
 }
