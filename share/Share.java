@@ -10,10 +10,9 @@ public class Share extends Subject
     private int value;
     final String NAME;
 
-    @Override
     public void addObserver()
     {
-        observer=new ShareObserver(this);
+        addObserver(new ShareObserver(this));
     }
     public Share(int value, String NAME)
     {
