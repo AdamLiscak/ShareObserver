@@ -7,15 +7,15 @@ public class Main
 {
     public static void main(String[] args) {
         Share share=new Share(30000,"Satanic Corporation of Microsoft");
-        share.addObserver();
+        share.addObservers();
         ShareUpdater fivePercent= new FivePercent();
         ShareUpdater random= new Random();
         Share bigBrother= new Share(50000,"Vim");
-        bigBrother.addObserver();
+        bigBrother.addObservers();
         Share tupac= new Share(40000,"Tupac");
-        tupac.addObserver();
+        tupac.addObservers();
         Share church= new Share(70000,"Church of Saint IGNUcius");
-        church.addObserver();
+        church.addObservers();
         random.update(share);
         fivePercent.update(share);
         random.update(bigBrother);

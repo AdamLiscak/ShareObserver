@@ -1,14 +1,23 @@
 package share;
 
+import share.Observer.Observer;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Subject
 {
-    Observer observer;
+    List<Observer> observers;
+    public Subject()
+    {
+        observers=new ArrayList<>();
+    }
     public void addObserver(Observer observer)
     {
-        this.observer=observer;
+        this.observers.add(observer);
     }
-    public void removeObserver()
+    public void removeObserver(Observer observer)
     {
-        observer=null;
+        this.observers.remove(observer);
     }
 }

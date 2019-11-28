@@ -1,18 +1,19 @@
 package share;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import share.Observer.Alarm;
+import share.Observer.Observer;
+import share.Observer.Ticker;
 
 public class Share extends Subject
 {
     private int value;
-    final String NAME;
+    public final String NAME;
 
-    public void addObserver()
+    public void addObservers()
     {
-        addObserver(new ShareObserver(this));
+        addObserver(new Alarm(this));
+        addObserver(new Ticker(this));
     }
     public Share(int value, String NAME)
     {
@@ -26,6 +27,12 @@ public class Share extends Subject
     public void update(int value)
     {
         this.value = value;
-        if(observer!=null) observer.onUpdate();
+        if(observers!=null)
+        {
+            for (Observer observer:observers)
+            {
+                observer.onUpdate();
+            }
+        }
     }
 }
